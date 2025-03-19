@@ -14,6 +14,8 @@ Regarding testing, I focused on core logic and key components. The backend has c
 
 I implemented the bonus features with a focus on usability. The design prioritizes user experience and mobile responsiveness, with minimal animations to balance functionality and development time.
 
+Regarding jsDoc documentation, I kept it for implementations that can be a bit confusing, most of the code should be as self explanatory as possible but in a real-world project i would adhere to a specific ruleset
+
 For frontend state management, I chose React Query over Redux for several advantages:
 - Built-in caching capabilities
 - Efficient error and loading state handling
