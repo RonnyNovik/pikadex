@@ -2,6 +2,15 @@ interface FetchOptions extends RequestInit {
     token: string | null;
 }
 
+/**
+ * Utility function for making authenticated API requests
+ * @template T - The expected return type of the API response
+ * @param {string} endpoint - The API endpoint to fetch from
+ * @param {FetchOptions} [options] - Request options including authentication token
+ * @param {string | null} [options.token] - JWT auth token
+ * @returns {Promise<T>} Promise that resolves with the JSON response data
+ * @throws {Error} Throws if the network request fails or returns non-200 status
+ */
 export async function fetchUtil<T>(endpoint: string, options: FetchOptions = {
     token: null
 }): Promise<T> {
