@@ -1,0 +1,16 @@
+.mainPageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 30px);
+    }
+
+    .endOfListBlock {
+        height: 2rem;
+    }
+}

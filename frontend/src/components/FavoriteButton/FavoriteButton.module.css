@@ -1,0 +1,27 @@
+.favoriteButton {
+    cursor: pointer;
+    width: initial;
+
+    &:hover {
+
+        .heart,
+        .heartFilled {
+            transform: scale(1.2);
+        }
+    }
+
+    .heart {
+        width: 24px;
+        height: 24px;
+        color: #6b7280;
+        transition: transform 0.2s ease;
+    }
+
+    .heartFilled {
+        width: 24px;
+        height: 24px;
+        color: #ef4444;
+        fill: #ef4444;
+        transition: transform 0.2s ease;
+    }
+}

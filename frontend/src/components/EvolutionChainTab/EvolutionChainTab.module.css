@@ -1,0 +1,62 @@
+.evolutionChainContainer {
+    width: 100%;
+    padding: 1rem;
+
+    .evolutionChain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .evolutionStep {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .arrow {
+        color: #6b7280;
+        width: 24px;
+        height: 24px;
+    }
+
+    .orIndicator {
+        color: #6b7280;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .noEvolutions {
+        color: #6b7280;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+        .evolutionChain {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .evolutionStep {
+            flex-direction: row;
+            align-items: center;
+            width: auto;
+            max-width: 200px;
+
+            &:last-child {
+                max-width: 160px;
+            }
+        }
+
+        .arrow {
+            transform: rotate(-90deg);
+        }
+    }
+}

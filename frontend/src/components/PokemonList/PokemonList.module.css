@@ -1,0 +1,30 @@
+.pokemonListContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow-y: auto;
+    grid-auto-rows: min-content;
+    min-height: 0;
+}
+
+@media (min-width: 768px) {
+    .pokemonListContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .pokemonListContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .pokemonListContainer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
