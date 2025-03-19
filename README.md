@@ -91,7 +91,7 @@ The application follows a modern full-stack architecture with clear separation o
 ## Prerequisites
 - Minimum: Node.js 18.17.0
 - Recommended: Node.js 20+
-- Running MongoDB server(for backend)
+- Running MongoDB server (for backend)
 - Docker (optional)
 
 ## Environment Setup

@@ -3,7 +3,7 @@ import { PokeAPIAbilityResponse } from '../types';
 import { createPokeAPIBatches, extractIdFromUrl, handlePokeAPIBatches, httpClient, getEvolutionChainData } from "../utils";
 import { CacheService } from '../services';
 import { DEFAULT_OFFSET, DEFAULT_LIMIT } from '../constants';
-import { checkAndHandleAxiosError } from '../utils/errors';
+import { checkAndHandleAxiosError, NotFoundError } from '../utils/errors';
 
 /**
  * Interface for response object with Pokemon-specific locals
@@ -127,6 +127,12 @@ export const getPokeAPIEvolutionData = async (req: Request, res: Response, next:
 export const getPokeAPIAbilitiesData = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const pokemonData = res.locals.pokemonData;
+
+        if (!pokemonData) {
+            next(new NotFoundError('Pokemon data not found'));
+            return;
+        }
+
         const abilityIds = pokemonData.abilities.map((ability: any) => `/ability/${extractIdFromUrl(ability.ability.url)}`);
         const cacheService = CacheService.getInstance();
         const cachedAbilityData = await cacheService.getPokemonAbility(pokemonData.name);
@@ -136,6 +142,7 @@ export const getPokeAPIAbilitiesData = async (req: Request, res: Response, next:
             next();
             return;
         }
+        
         const batchRequests = createPokeAPIBatches(abilityIds);
         const abilityData = await handlePokeAPIBatches(batchRequests);
 
