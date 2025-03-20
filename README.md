@@ -22,6 +22,8 @@ For frontend state management, I chose React Query over Redux for several advant
 - Native infinite scrolling support
 - Simpler implementation for this use case
 
+When it comes to using useMemo and useCallback, I have implemented it only in impactful places, the impact was tested using the `<Profiler>` component provided by React.
+
 While there's room for improvement - such as refining the loader behavior, extracting more logic into custom hooks, and enhancing the backend with Zod schemas - I believe this implementation demonstrates my approach to code organization and architecture.
 
 Let's get started with running the app!
